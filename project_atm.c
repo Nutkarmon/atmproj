@@ -5,6 +5,9 @@
 //Prototype
 int snacks();
 int menu();
+int food();
+int checkout();
+void payment();
 
 //Data Structure Variables
 struct snacks_stock{
