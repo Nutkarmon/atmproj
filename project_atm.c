@@ -15,6 +15,10 @@ struct snacks_stock{
     int price;
     char name[50];
 };
+struct foods_stock{
+    int price;
+    char name[50];
+};
 
 //Declaring global variables
 int total, amount, m_in, i=0;
@@ -31,16 +35,14 @@ int main(){
              case 0 : break;
              default : printf("Invalid Menu");break;      
         }
-        choice = menu();
-                   
+        choice = menu();            
     }while(choice!=0);
     return 0;
 }
 
 
 int menu(){
-    //MENU CODE
-int ch;
+    int ch;
     printf("\n***************Menu************");
     printf("\n***************1.Sancks************");
     printf("\n***************2.Drinks************");
@@ -78,4 +80,12 @@ int snacks(){
 	}while(opt!=0);
 	
     return 0;
+}
+
+int food(){
+    int foodChoice;
+    struct foods_stock fst[10] = {{45, "Pork Fried Rice"}, {55, "Shrimp Fried Rice"}};
+    for(i=0;i<2;i++){
+        printf("%s %d\n",fst[i].name,fst[i].price);
+    }
 }
