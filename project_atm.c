@@ -17,12 +17,35 @@ int total, amount, m_in, i=0;
 
 int main(){
     snacks();
+    int choice;
+    choice = menu();
+    do{
+        switch(choice){
+             case 1 : sancks(); break;
+             case 2 : drinks();break;
+             case 3 : food(); break;
+             case 0 : break;
+             default : printf("Invalid Menu");break;      
+        }
+        choice = menu();
+                   
+    }while(choice!=0);
     return 0;
 }
 
+
 int menu(){
     //MENU CODE
-printf("lov hee");
+int ch;
+    printf("\n***************Menu************");
+    printf("\n***************1.Sancks************");
+    printf("\n***************2.Drinks************");
+    printf("\n***************3.Foods************");
+    printf("\n***************4.exit************");
+    printf("\n***************************");
+    printf("\n Please Select Menu [1-4]:");
+    scanf("%d",&ch);
+    return ch;
 }
 
 //Snacks section
