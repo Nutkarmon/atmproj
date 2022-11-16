@@ -6,6 +6,7 @@
 int snacks();
 int menu();
 int food();
+int drinks();
 int checkout();
 void payment();
 
