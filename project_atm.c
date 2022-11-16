@@ -22,7 +22,7 @@ int main(){
 
 int menu(){
     //MENU CODE
-printf("love hee");
+printf("lov hee");
 }
 
 //Snacks section
