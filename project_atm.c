@@ -22,6 +22,7 @@ int main(){
 
 int menu(){
     //MENU CODE
+printf("love hee");
 }
 
 //Snacks section
