@@ -158,4 +158,3 @@ void payment(){
 	}while(pay!=0);	
 	
 }
-
