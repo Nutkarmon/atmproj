@@ -35,6 +35,7 @@ int main(){
              case 1 : snacks(); break;
              case 2 : drinks();break;
              case 3 : food(); break;
+             case 4 : payment(); break;
              case 0 : break;
              default : printf("Invalid Menu");break;      
         }
@@ -50,7 +51,8 @@ int menu(){
     printf("\n***************1.Sancks************");
     printf("\n***************2.Drinks************");
     printf("\n***************3.Foods************");
-    printf("\n***************4.exit************");
+    printf("\n***************4.Payment************");
+    printf("\n***************5.exit************");
     printf("\n***************************");
     printf("\n Please Select Menu [1-4]:");
     scanf("%d",&ch);
@@ -137,5 +139,23 @@ int drinks(){
 	}while(drinksChoice!=0);
 	
 	return 0;
+}
+
+void payment(){
+	int pay;
+	
+	printf("\nPlease Select your payment");
+	printf("\n 1.cash");
+	printf("\n 2.qr promptpay");
+	
+	do{
+		switch(pay){
+			case 1 :printf("cash"); break;
+			case 2 :printf("qr promptpay"); break;
+		}
+		printf("\nPlease Select your option (Press 0 for exit): ");
+    	scanf("%d",&pay);
+	}while(pay!=0);	
+	
 }
 
