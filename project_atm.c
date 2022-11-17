@@ -28,11 +28,12 @@ struct drink_stock{
 int total, amount, m_in, i=0;
 
 int main(){
+    snacks();
     int choice;
     choice = menu();
     do{
         switch(choice){
-             case 1 : snacks(); break;
+             case 1 : sancks(); break;
              case 2 : drinks();break;
              case 3 : food(); break;
              case 0 : break;
@@ -87,7 +88,6 @@ int snacks(){
 //food section
 int food(){
     int foodChoice;
-<<<<<<< HEAD
     struct foods_stock fst[10] = {{45, "Pork Fried Rice"},{55, "Shrimp Fried Rice"}};
     
     printf("FOOD SECTION\n--------------------------------\n");
@@ -95,11 +95,6 @@ int food(){
     
     for(i=0;i<size;i++){
         printf("Product name :\t\t\t\tPrice:\n%s\t\t\t%d",fst[i].name,fst[i].price);
-=======
-    struct foods_stock fst[size] = {{45, "Pork Fried Rice"}, {55, "Shrimp Fried Rice"}, {69, "Rice with Red Curry"}, {45, "Minced Pork Pad Ka Prao with Fried Egg"}, {40, "Minced Pork Pad Ka Prao"}};
-    for(i=0;i<size;i++){
-        printf("%s %d\n",fst[i].name,fst[i].price);
->>>>>>> 3f3eb34650f2af0ffd4c65964cfd3376e7849af6
     }
     
     printf("\nPlease Select your option (press 0 for exit): ");
@@ -107,8 +102,8 @@ int food(){
     
     do{
     	switch(foodChoice){
-    		case 1 : printf("You selected %s (%d baht)",fst[0].name,fst[0].price);
-    		case 2 : printf("You selected %s (%d baht)",fst[1].name,fst[1].price);
+    		case 1 : printf("You selected %s (%d baht)",fst[0].name,fst[0].price); 
+    		case 2 : printf("You selected %s (%d baht)",fst[1].name,fst[1].price); 
 		}
 		printf("\nPlease Select your option (Press 0 for exit): ");
     	scanf("%d",&foodChoice);
