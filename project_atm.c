@@ -89,7 +89,7 @@ int snacks(){
 //food section
 int food(){
     int foodChoice;
-    struct foods_stock fst[10] = {{45, "Pork Fried Rice"},{55, "Shrimp Fried Rice"}};
+    struct foods_stock fst[size] = {{45, "Pork Fried Rice"},{55, "Shrimp Fried Rice"}};
     
     printf("FOOD SECTION\n--------------------------------\n");
     printf("Food List :\n");
