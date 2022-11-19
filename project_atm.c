@@ -127,13 +127,15 @@ int food(int total){
 //drink section
 int drinks(){
 	int drinksChoice;
-	struct drinks_stock ds[10] = {{15,"Cola"}, {20,"Oishi"}};
+	struct drinks_stock ds[10] = {{15,"Cola"}, {20,"Oishi"},{45,"Apple"},{30,"Orenge"},{45,"Soda"},{65,"perrier Water"},{35,"Peach Soda"},{55,"Kiwi"},{55,"Strawberry"},{55,"Sprite"}};
 	
 	printf("DRINKS SECTION\n-------------------------------\n");
 	printf("Drink List :\n");
 	
+	printf("\t\t\t\t\t\tPrice",ds[i].price);
+	
 	for(i=0;i<size;i++){
-		printf("Product name :\t\t\t\tPrice:\n%s\t\t\t%d",ds[i].name,ds[i].price);
+		printf("\nProduct name [%d] :%s\t\t\t\t %d",i+1,ds[i].name,ds[i].price);
 	}
 	
 	printf("\nPlease Select your option (press 0 for exit): ");
@@ -141,8 +143,18 @@ int drinks(){
     
     do{
     	switch(drinksChoice){
-    		case 1 :printf("You selected %s (%d baht)",ds[0].name,ds[0].price);
-    		case 2 :printf("You selected %s (%d baht)",ds[1].name,ds[1].price);
+    		case 1 :printf("You selected %s (%d baht)",ds[0].name,ds[0].price); total += ds[0].price; break;
+    		case 2 :printf("You selected %s (%d baht)",ds[1].name,ds[1].price); total += ds[1].price; break;
+    		case 3 :printf("You selected %s (%d baht)",ds[2].name,ds[2].price); total += ds[2].price; break;
+    		case 4 :printf("You selected %s (%d baht)",ds[3].name,ds[3].price); total += ds[3].price; break;
+    		case 5 :printf("You selected %s (%d baht)",ds[4].name,ds[4].price); total += ds[4].price; break;
+    		case 6 :printf("You selected %s (%d baht)",ds[5].name,ds[5].price); total += ds[5].price; break;
+    		case 7 :printf("You selected %s (%d baht)",ds[6].name,ds[6].price); total += ds[6].price; break;
+    		case 8 :printf("You selected %s (%d baht)",ds[7].name,ds[7].price); total += ds[7].price; break;
+    		case 9 :printf("You selected %s (%d baht)",ds[8].name,ds[8].price); total += ds[8].price; break;
+    		case 10 :printf("You selected %s (%d baht)",ds[9].name,ds[9].price); total += ds[9].price; break;
+    		case 0 : break;
+    		default : printf("Invalid selection, please try again...");
 		}
 		printf("\nPlease Select your option (Press 0 for exit): ");
     	scanf("%d",&drinksChoice);
