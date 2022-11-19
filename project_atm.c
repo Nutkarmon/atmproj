@@ -67,24 +67,24 @@ int snacks(){
     printf("SNACKS SECTION\n---------------------------------\n");
     printf("Snacks List :\n");
 
-    printf("Product name :\t\t\t\tPrice:\n");
+    printf("\t\t\t\t\t\t\t\t\tprice");
     for(i=0;i<size;i++){
-        printf("%s\t\t\t%d",st[i].name,st[i].price);
+        printf("\nProduct [%d]: %s\t\t\t\t\t%d",i+1,st[i].name,st[i].price);
     }
 
 
     do{
     	switch(opt){
-            case 1: printf("You selected %s (%d baht)",st[0].name,st[0].price); break;
-            case 2: printf("You selected %s (%d baht)",st[1].name,st[1].price); break;
-            case 3: printf("You selected %s (%d baht)",st[2].name,st[2].price); break;
-            case 4: printf("You selected %s (%d baht)",st[3].name,st[3].price); break;
-            case 5: printf("You selected %s (%d baht)",st[4].name,st[4].price); break;
-            case 6: printf("You selected %s (%d baht)",st[5].name,st[5].price); break;
-            case 7: printf("You selected %s (%d baht)",st[6].name,st[6].price); break;
-            case 8: printf("You selected %s (%d baht)",st[7].name,st[7].price); break;
-            case 9: printf("You selected %s (%d baht)",st[8].name,st[8].price); break; 
-			case 10: printf("You selected %s (%d baht)",st[9].name,st[9].price); break;   
+            case 1: printf("You selected %s (%d baht)",st[0].name,st[0].price); total += st[0].price; break;
+            case 2: printf("You selected %s (%d baht)",st[1].name,st[1].price); total += st[1].price;  break;
+            case 3: printf("You selected %s (%d baht)",st[2].name,st[2].price); total += st[2].price; break;
+            case 4: printf("You selected %s (%d baht)",st[3].name,st[3].price); total += st[3].price; break;
+            case 5: printf("You selected %s (%d baht)",st[4].name,st[4].price); total += st[4].price; break;
+            case 6: printf("You selected %s (%d baht)",st[5].name,st[5].price); total += st[5].price; break;
+            case 7: printf("You selected %s (%d baht)",st[6].name,st[6].price); total += st[6].price; break;
+            case 8: printf("You selected %s (%d baht)",st[7].name,st[7].price); total += st[7].price; break;
+            case 9: printf("You selected %s (%d baht)",st[8].name,st[8].price); total += st[8].price; break; 
+			case 10: printf("You selected %s (%d baht)",st[9].name,st[9].price); total += st[9].price; break;   
 			case 0 : break;
             default : printf("Invalid selection, please try again..."); break;    
     	}
@@ -102,10 +102,11 @@ int food(){
     
     printf("FOOD SECTION\n--------------------------------\n");
     printf("Food List :\n");
-    printf("Product name :\t\t\t\tPrice:\n");
+    
+    printf("\t\t\t\t\t\t\tprice");
 
     for(i=0;i<size;i++){
-        printf("%s\t\t\t%d\n",fst[i].name,fst[i].price);
+        printf("\nProduct [%d]: %s\t\t\t\t%d",i+1,fst[i].name,fst[i].price);
     }
     
     
@@ -127,7 +128,6 @@ int food(){
 		printf("\nPlease Select your option (Press 0 for exit): ");
     	scanf("%d",&foodChoice);
 	}while(foodChoice!=0);
-	
 	return total;
 }
 
@@ -142,9 +142,8 @@ int drinks(){
 	printf("\t\t\t\t\t\tPrice");
 	
 	for(i=0;i<size;i++){
-		printf("\nProduct name [%d] :%s\t\t\t\t %d",i+1,ds[i].name,ds[i].price);
+		printf("\nProduct [%d] :%s\t\t\t\t %d",i+1,ds[i].name,ds[i].price);
 	}
-	
     
     do{
     	switch(drinksChoice){
