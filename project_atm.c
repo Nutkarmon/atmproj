@@ -62,7 +62,7 @@ int menu(){
 //Snacks section
 int snacks(){
     int opt, chance;
-    struct snacks_stock st[10] = {{10, "Lay's Nori Seaweed (Small)"}, {15, "Lay's Nori Seaweed (Large)"}};
+    struct snacks_stock st[10] = {{10, "Lay's Nori Seaweed (Small)"},{15, "Lay's Nori Seaweed (Large)"},{17, "Choco Stick"},{10, "Potato Snack"},{20,"KitKat"},{5, "OK"},{7, "Euro Cake"},{10, "Snack Jack"},{20, "Carada"},{10, "Cronae"}};
 
     printf("SNACKS SECTION\n---------------------------------\n");
     printf("Snacks List :\n");
@@ -71,13 +71,21 @@ int snacks(){
         printf("Product name :\t\t\t\tPrice:\n%s\t\t\t%d",st[i].name,st[i].price);
     }
 
-    printf("\nPlease Select your option (Press 0 for exit): ");
-    scanf("%d",&opt);
 
     do{
     	switch(opt){
             case 1: printf("You selected %s (%d baht)",st[0].name,st[0].price); break;
             case 2: printf("You selected %s (%d baht)",st[1].name,st[1].price); break;
+            case 3: printf("You selected %s (%d baht)",st[2].name,st[2].price); break;
+            case 4: printf("You selected %s (%d baht)",st[3].name,st[3].price); break;
+            case 5: printf("You selected %s (%d baht)",st[4].name,st[4].price); break;
+            case 6: printf("You selected %s (%d baht)",st[5].name,st[5].price); break;
+            case 7: printf("You selected %s (%d baht)",st[6].name,st[6].price); break;
+            case 8: printf("You selected %s (%d baht)",st[7].name,st[7].price); break;
+            case 9: printf("You selected %s (%d baht)",st[8].name,st[8].price); break; 
+			case 10: printf("You selected %s (%d baht)",st[9].name,st[9].price); break;   
+			case 0 : break;
+            default : printf("Invalid selection, please try again..."); break;    
     	}
     	printf("\nPlease Select your option (Press 0 for exit): ");
     	scanf("%d",&opt);
@@ -99,8 +107,6 @@ int food(int total){
         printf("%s\t\t\t%d\n",fst[i].name,fst[i].price);
     }
     
-    printf("\nPlease Select your option (press 0 for exit): ");
-    scanf("%d",&foodChoice);
     
     do{
     	switch(foodChoice){
@@ -138,8 +144,6 @@ int drinks(){
 		printf("\nProduct name [%d] :%s\t\t\t\t %d",i+1,ds[i].name,ds[i].price);
 	}
 	
-	printf("\nPlease Select your option (press 0 for exit): ");
-    scanf("%d",&drinksChoice);
     
     do{
     	switch(drinksChoice){
