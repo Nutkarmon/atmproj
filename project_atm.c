@@ -168,20 +168,22 @@ int drinks(int total){
 }
 
 void payment(int total){
-	int pay;
+	int pay=0, payMethod;
     pay = snacks(total)+food(total)+drinks(total);
+
+    printf("Total = %d\n",pay);
 	
 	printf("\nPlease Select your payment");
 	printf("\n 1.cash");
 	printf("\n 2.qr promptpay");
 	
 	do{
-		switch(pay){
+		switch(payMethod){
 			case 1 :printf("cash"); break;
 			case 2 :printf("qr promptpay"); break;
 		}
 		printf("\nPlease Select your option (Press 0 for exit): ");
-    	scanf("%d",&pay);
+    	scanf("%d",&payMethod);
 	}while(pay!=0);	
 	
 }
