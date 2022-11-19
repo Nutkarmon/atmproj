@@ -5,7 +5,7 @@
 //Prototype
 int snacks();
 int menu();
-int food();
+int food(int total);
 int drinks();
 int checkout();
 void payment();
@@ -34,7 +34,7 @@ int main(){
         switch(choice){
              case 1 : snacks(); break;
              case 2 : drinks();break;
-             case 3 : food(); break;
+             case 3 : food(total); break;
              case 4 : payment(); break;
              case 0 : break;
              default : printf("Invalid Menu");break;      
@@ -87,9 +87,9 @@ int snacks(){
 }
 
 //food section
-int food(){
+int food(int total){
     int foodChoice;
-    struct foods_stock fst[size] = {{45, "Pork Fried Rice"}, {55, "Shrimp Fried Rice"}, {60, "Pad Thai"}, {55, "Rice Burger with Larb Moo"}, };
+    struct foods_stock fst[size] = {{45, "Pork Fried Rice"}, {55, "Shrimp Fried Rice"}, {60, "Pad Thai"}, {55, "Rice Burger with Larb Moo"}, {80, "Parma Ham Pizza"}, {25, "Instant Noodles (Tom Yum Goong flavour)"}, {25, "Instant Noodles (Minced Pork flavour)"}, {25, "Instant Noodles (Pad Ki Mao flavour)"}, {25, "Instant Noodles (Ramyeon)"}, {25, "Ham & Cheese Sandwich"}};
     
     printf("FOOD SECTION\n--------------------------------\n");
     printf("Food List :\n");
@@ -104,16 +104,16 @@ int food(){
     
     do{
     	switch(foodChoice){
-    		case 1 : printf("You selected %s (%d baht)",fst[0].name,fst[0].price); break;
-    		case 2 : printf("You selected %s (%d baht)",fst[1].name,fst[1].price); break;
-            case 3 : printf("You selected %s (%d baht)",fst[2].name,fst[2].price); break; 
-    		case 4 : printf("You selected %s (%d baht)",fst[3].name,fst[3].price); break; 
-            case 5 : printf("You selected %s (%d baht)",fst[4].name,fst[4].price); break; 
-    		case 6 : printf("You selected %s (%d baht)",fst[5].name,fst[5].price); break; 
-            case 7 : printf("You selected %s (%d baht)",fst[6].name,fst[6].price); break; 
-    		case 8 : printf("You selected %s (%d baht)",fst[7].name,fst[7].price); break; 
-            case 9 : printf("You selected %s (%d baht)",fst[8].name,fst[8].price); break; 
-    		case 10 : printf("You selected %s (%d baht)",fst[9].name,fst[9].price); break;
+    		case 1 : printf("You selected %s (%d baht)",fst[0].name,fst[0].price); total += fst[0].price; break;
+    		case 2 : printf("You selected %s (%d baht)",fst[1].name,fst[1].price); total += fst[1].price; break;
+            case 3 : printf("You selected %s (%d baht)",fst[2].name,fst[2].price); total += fst[2].price; break; 
+    		case 4 : printf("You selected %s (%d baht)",fst[3].name,fst[3].price); total += fst[3].price; break; 
+            case 5 : printf("You selected %s (%d baht)",fst[4].name,fst[4].price); total += fst[4].price; break; 
+    		case 6 : printf("You selected %s (%d baht)",fst[5].name,fst[5].price); total += fst[5].price; break; 
+            case 7 : printf("You selected %s (%d baht)",fst[6].name,fst[6].price); total += fst[6].price; break; 
+    		case 8 : printf("You selected %s (%d baht)",fst[7].name,fst[7].price); total += fst[7].price; break; 
+            case 9 : printf("You selected %s (%d baht)",fst[8].name,fst[8].price); total += fst[8].price; break; 
+    		case 10 : printf("You selected %s (%d baht)",fst[9].name,fst[9].price); total += fst[9].price; break;
             case 0 : break;
             default : printf("Invalid selection, please try again...");
 		}
@@ -121,7 +121,7 @@ int food(){
     	scanf("%d",&foodChoice);
 	}while(foodChoice!=0);
 	
-	return 0;
+	return total;
 }
 
 //drink section
