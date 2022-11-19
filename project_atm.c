@@ -3,12 +3,12 @@
 #define size 10
 
 //Prototype
-int snacks();
+int snacks(int total);
 int menu();
 int food(int total);
-int drinks();
+int drinks(int total);
 int checkout();
-void payment();
+void payment(int total);
 
 //Data Structure Variables
 struct snacks_stock{
@@ -32,10 +32,10 @@ int main(){
     choice = menu();
     do{
         switch(choice){
-             case 1 : snacks(); break;
-             case 2 : drinks();break;
+             case 1 : snacks(total); break;
+             case 2 : drinks(total);break;
              case 3 : food(total); break;
-             case 4 : payment(); break;
+             case 4 : payment(total); break;
              case 0 : break;
              default : printf("Invalid Menu");break;      
         }
@@ -60,7 +60,7 @@ int menu(){
 }
 
 //Snacks section
-int snacks(){
+int snacks(int total){
     int opt, chance;
     struct snacks_stock st[10] = {{10, "Lay's Nori Seaweed (Small)"},{15, "Lay's Nori Seaweed (Large)"},{17, "Choco Stick"},{10, "Potato Snack"},{20,"KitKat"},{5, "OK"},{7, "Euro Cake"},{10, "Snack Jack"},{20, "Carada"},{10, "Cronae"}};
 
@@ -91,7 +91,7 @@ int snacks(){
     	scanf("%d",&opt);
 	}while(opt!=0);
 	
-    return 0;
+    return total;
 }
 
 //food section
@@ -131,7 +131,7 @@ int food(int total){
 }
 
 //drink section
-int drinks(){
+int drinks(int total){
 	int drinksChoice;
 	struct drinks_stock ds[10] = {{15,"Cola"}, {20,"Oishi"},{45,"Apple"},{30,"Orenge"},{45,"Soda"},{65,"perrier Water"},{35,"Peach Soda"},{55,"Kiwi"},{55,"Strawberry"},{55,"Sprite"}};
 	
@@ -164,11 +164,12 @@ int drinks(){
     	scanf("%d",&drinksChoice);
 	}while(drinksChoice!=0);
 	
-	return 0;
+	return total;
 }
 
-void payment(){
+void payment(int total){
 	int pay;
+    pay = snacks(total)+food(total)+drinks(total);
 	
 	printf("\nPlease Select your payment");
 	printf("\n 1.cash");
