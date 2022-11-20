@@ -47,13 +47,13 @@ int main(){
 int menu(){
     int ch;
     printf("\n***************Menu************");
-    printf("\n***************1.Sancks************");
+    printf("\n***************1.Snacks************");
     printf("\n***************2.Drinks************");
     printf("\n***************3.Foods************");
     printf("\n***************4.Payment************");
-    printf("\n***************5.exit************");
+    printf("\n***************0.exit************");
     printf("\n***************************");
-    printf("\n Please Select Menu [1-4]:");
+    printf("\n Please Select Menu [0-4]:");
     scanf("%d",&ch);
     return ch;
 }
@@ -61,7 +61,7 @@ int menu(){
 //Snacks section
 int snacks(){
     int opt, chance;
-    struct snacks_stock st[10] = {{10, "Lay's Nori Seaweed (Small)"},{15, "Lay's Nori Seaweed (Large)"},{17, "Choco Stick"},{10, "Potato Snack"},{20,"KitKat"},{5, "OK"},{7, "Euro Cake"},{10, "Snack Jack"},{20, "Carada"},{10, "Cronae"}};
+    struct snacks_stock st[size] = {{10, "Lay's Nori Seaweed (Small)"},{15, "Lay's Nori Seaweed (Large)"},{17, "Choco Stick"},{10, "Potato Snack"},{20,"KitKat"},{5, "OK"},{7, "Euro Cake"},{10, "Snack Jack"},{20, "Carada"},{10, "Cronae"}};
 
     printf("SNACKS SECTION\n---------------------------------\n");
     printf("Snacks List :\n");
@@ -133,7 +133,7 @@ int food(){
 //drink section
 int drinks(){
 	int drinksChoice;
-	struct drinks_stock ds[10] = {{15,"Cola"}, {20,"Oishi"},{45,"Apple"},{30,"Orenge"},{45,"Soda"},{65,"perrier Water"},{35,"Peach Soda"},{55,"Kiwi"},{55,"Strawberry"},{55,"Sprite"}};
+	struct drinks_stock ds[size] = {{15,"Cola"}, {20,"Oishi"},{45,"Apple"},{30,"Orenge"},{45,"Soda"},{65,"perrier Water"},{35,"Peach Soda"},{55,"Kiwi"},{55,"Strawberry"},{55,"Sprite"}};
 	
 	printf("DRINKS SECTION\n-------------------------------\n");
 	printf("Drink List :\n");
@@ -180,8 +180,8 @@ int payment(){
             default : printf("Invalid Payment Method!"); break;
 		}
 		printf("\nPlease Select your payment");
-	    printf("\n 1.cash");
-	    printf("\n 2.qr promptpay");
+	    printf("\n\t1.cash");
+	    printf("\n\t2.qr promptpay");
         printf("\nPlease Select your option (Press 0 for exit): ");
         scanf("%d",&payMethod);
 	}while(payMethod!=0);	
