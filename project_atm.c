@@ -7,7 +7,6 @@ int snacks();
 int menu();
 int food();
 int drinks();
-int checkout();
 int payment();
 
 //Data Structure Variables
