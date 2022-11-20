@@ -184,6 +184,27 @@ int payment(){
 	    printf("\n\t2.qr promptpay");
         printf("\nPlease Select your option (Press 0 for exit): ");
         scanf("%d",&payMethod);
-	}while(payMethod!=0);	
+		if(payMethod==1){
+        	printf("input money : ");
+        	scanf("%d",&m_in);
+        	printf("Money = %d\n",m_in);
+        }
+        
+		if(payMethod==2){
+			printf(" ||.|||.||||.|||||.||||.|||.||\n");
+			printf("input money : ");
+        	scanf("%d",&m_in);
+		    printf("Money = %d\n",m_in);
+		}
+
+	}while(payMethod!=0);
+	
+	printf("Money = %d\n",m_in);
+	if(m_in>total){
+			printf("you jay ken");
+		}else{
+			printf("input money agin");
+		}
+		printf("jay tang sum red");
 	return total;
 }
