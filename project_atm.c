@@ -171,18 +171,20 @@ int payment(){
 	int pay=0, payMethod, countFood, chF;
     pay = total;
     countFood = foodCount;
+    if(countFood>0){
+        do{
+            printf("You have %d food(s) that can warm. Do you want to warm food(s)?\nPress 1 : Yes\nPress 2 : No\nSelect Option [1/2] : ",foodCount);
+            scanf("%d",&chF);
+            if(chF==1){
+                printf("You selected to warm foods.\n");
+            }else if(chF==2){
+                printf("You selected to not warm foods.\n");
+            }else{
+                printf("Invalid decision, please try again...\n");
+            }
+        }while(chF!=1&&chF!=2);
+    }
 
-    do{
-        printf("You have %d food(s) that can warm. Do you want to warm food(s)?\nPress 1 : Yes\nPress 2 : No\nSelect Option [1/2] : ",foodCount);
-        scanf("%d",&chF);
-        if(chF==1){
-            printf("You selected to warm foods.\n");
-        }else if(chF==2){
-            printf("You selected to not warm foods.\n");
-        }else{
-            printf("Invalid decision, please try again...\n");
-        }
-    }while(chF!=1&&chF!=2);
     printf("Total = %d\n",pay);
 	
 	do{
