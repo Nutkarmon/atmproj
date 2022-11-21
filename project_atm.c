@@ -46,16 +46,19 @@ int main(){
 
 int menu(){
     int ch;
-    printf("\n***************Menu************");
-    printf("\n***************1.Snacks************");
-    printf("\n***************2.Drinks************");
-    printf("\n***************3.Foods************");
-    printf("\n***************4.Payment************");
-    printf("\n***************0.exit************");
-    printf("\n***************************");
-    printf("\n Please Select Menu [0-4]:");
+    printf("\n\t\t\t ______________________________________");
+    printf("\n\t\t\t|                  Menu               |");
+    printf("\n\t\t\t|_____________________________________|");
+    printf("\n\t\t\t|               1.Snacks              |");
+    printf("\n\t\t\t|               2.Drinks              |");
+    printf("\n\t\t\t|               3.Foods               |");
+    printf("\n\t\t\t|               4.Payment             |");
+    printf("\n\t\t\t|_____________________________________|");
+    printf("\n\t\t\t|                0.exit               |");
+    printf("\n\t\t\t|_____________________________________|");
+    printf("\n\n Please Select Menu [0-4]:");
     scanf("%d",&ch);
-    return ch;
+    return ch; 
 }
 
 //Snacks section
@@ -186,10 +189,11 @@ int drinks(){
 }
 
 int payment(){
-	int pay=0, payMethod, *m_in=0, ppin=0, change=0;
-    pay = total;
+	int pay=0, payMethod,n,ppin=0,m; //m=change,tang torn n=m_in,tang tee input 
+	int a,b,c,d,e,f,g,h;
+    i = total; //i=pay
 
-    printf(" Total = %d\n",pay);
+    printf(" Total = %d\n",i);
 	do{
 		printf("\nPlease Select your payment");
 	    printf("\n\t1.cash");
@@ -200,26 +204,59 @@ int payment(){
     	
     	if(payMethod==1){
         	do{
+                printf(" Total = %d\n",i);
 				printf("input money : ");
-        		scanf("%d",&m_in);
-        		if(m_in>total){
-					printf("you jay ken\n");
-					change = &m_in-pay;
-					printf("%d - %d = %d"),&m_in,&pay,change;
-					printf("\nPayment Successful!");
-				}else if(m_in<total){
-					printf("insufficient money, input money again");
+        		scanf("%d",&n);
+        		if(n>i){
+					printf("\nyou jay ken\n");
+					m = n-i;
+					printf("\nTorn = %d Bath \n\n"),m;
+					a=m/1000;
+
+           printf("\nBank 1,000 = %d ",a);
+            b=m%1000;
+            c=b/100;
+      if (c>=5){
+      printf("\nBank 500 = %d ",1);
+            c=c-5;
+      }else{
+      }
+      printf("\nBank 100 = %d ",c);
+
+           d=m%100;
+
+           e=d/10;
+
+      if (e>=5){
+      printf("\nBank 50 = %d ",1);
+           e=e-5;
+      }else{
+      }
+           f=e/2;
+      printf("\nBank 20 = %d ",f);
+           g=e%2;
+      printf("\nCoin 10 = %d ",g);
+           h=m%10;
+      if (h>=5){
+      printf("\nCoin 5 = %d ",1);
+           h=h-5;
+      }else{
+      }
+      printf("\nCoin 1 = %d ",h);
+					printf("\nPayment Successful!");					
+	  }else if(n<i){
+					 printf("insufficient money, input money again");
 				}else{
 					printf("Payment Successful!");
 				}
-			}while((&m_in!=pay)&&(&m_in<pay));
+			}while((&n!=i)&&(&n<i));
     	}
 		if(payMethod==2){
 			printf(" ||.|||.||||.|||||.||||.|||.||\n");
-			printf(" Jum nun tang tee tong jay = %d\n",pay);
+			printf(" Jum nun tang tee tong jay = %d\n",i);
 			printf("input money : ");
         	scanf("%d",&ppin);
-			printf(" sThank you ('_')");
+			printf(" Thank you ('_')");
 		}
 	return total;
 }
