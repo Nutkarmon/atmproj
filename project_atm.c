@@ -219,7 +219,7 @@ int payment(){
 			printf(" Jum nun tang tee tong jay = %d\n",pay);
 			printf("input money : ");
         	scanf("%d",&ppin);
-			printf(" Thank you ('_')");
+			printf(" sThank you ('_')");
 		}
 	return total;
 }
