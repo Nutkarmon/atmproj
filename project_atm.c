@@ -167,9 +167,9 @@ int drinks(){
 	
 	int sizeC=result;
 	printf("\n[Please select size]");
-	printf("\n[1] S  20Baht");
-	printf("\n[2] M  30Baht");
-	printf("\n[3] L  35Baht");
+	printf("\n[1] S  20 Baht");
+	printf("\n[2] M  30 Baht");
+	printf("\n[3] L  35 Baht");
 	printf("\nselect size :");
 	
 	scanf("%d",&ac);
@@ -194,7 +194,7 @@ int payment(){
 	
 	if(cF>0){
 		do{
-			printf("You have %d food(s) to warm. Do you want to warm food(s)?\n1 - Yes\n2 - No");
+			printf("You have %d food(s) to warm. Do you want to warm food(s)?\n1 - Yes\n2 - No",cF);
 			scanf("%d",&cH);
 			if(cH==1){
 				printf("You choose to warm food(s).");
@@ -209,12 +209,6 @@ int payment(){
 	
 	
 	do{
-		switch(payMethod){
-			case 1 :printf("cash"); break;
-			case 2 :printf("qr promptpay"); break;
-            case 0 : break;
-            default : printf("Invalid Payment Method!"); break;
-		}
 		printf("\nPlease Select your payment");
 	    printf("\n\t1.cash");
 	    printf("\n\t2.qr promptpay");
