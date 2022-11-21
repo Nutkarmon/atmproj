@@ -122,7 +122,7 @@ int food(){
             case 9 : printf("You selected %s (%d baht)",fst[8].name,fst[8].price); total += fst[8].price; break; 
     		case 10 : printf("You selected %s (%d baht)",fst[9].name,fst[9].price); total += fst[9].price; break;
             case 0 : break;
-            default : printf("Invalid selection, please try again...");
+            default : printf("Invalid selection, please try again..."); break;
 		}
 		printf("\nPlease Select your option (Press 0 for exit): ");
     	scanf("%d",&foodChoice);
@@ -132,7 +132,8 @@ int food(){
 
 //drink section
 int drinks(){
-	int drinksChoice,ac;
+	int drinksChoice,drinkcount,ac,result,totaldrinks,sum=0;
+
 	struct drinks_stock ds[size] = {{15,"Cola"}, {20,"Oishi"},{45,"Apple"},{30,"Orenge"},{45,"Soda"},{65,"perrier Water"},{35,"Peach Soda"},{55,"Kiwi"},{55,"Strawberry"},{55,"Sprite"}};
 	
 	printf("DRINKS SECTION\n-------------------------------\n");
@@ -146,43 +147,197 @@ int drinks(){
     
     do{
     	switch(drinksChoice){
-    		case 1 :printf("You selected %s (%d baht)",ds[0].name,ds[0].price); total += ds[0].price; break;
-    		case 2 :printf("You selected %s (%d baht)",ds[1].name,ds[1].price); total += ds[1].price; break;
-    		case 3 :printf("You selected %s (%d baht)",ds[2].name,ds[2].price); total += ds[2].price; break;
-    		case 4 :printf("You selected %s (%d baht)",ds[3].name,ds[3].price); total += ds[3].price; break;
-    		case 5 :printf("You selected %s (%d baht)",ds[4].name,ds[4].price); total += ds[4].price; break;
-    		case 6 :printf("You selected %s (%d baht)",ds[5].name,ds[5].price); total += ds[5].price; break;
-    		case 7 :printf("You selected %s (%d baht)",ds[6].name,ds[6].price); total += ds[6].price; break;
-    		case 8 :printf("You selected %s (%d baht)",ds[7].name,ds[7].price); total += ds[7].price; break;
-    		case 9 :printf("You selected %s (%d baht)",ds[8].name,ds[8].price); total += ds[8].price; break;
-    		case 10 :printf("You selected %s (%d baht)",ds[9].name,ds[9].price); total += ds[9].price; break;
+    		case 1 :printf("\You selected %s (%d baht)",ds[0].name,ds[0].price);totaldrinks = ds[0].price; 
+			     	printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+						
+						
+    		case 2 :printf("You selected %s (%d baht)",ds[1].name,ds[1].price);totaldrinks = ds[1].price; 
+					printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+					
+    		case 3 :printf("You selected %s (%d baht)",ds[2].name,ds[2].price);totaldrinks =  ds[2].price; 
+					printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+					
+    		case 4 :printf("You selected %s (%d baht)",ds[3].name,ds[3].price); totaldrinks = ds[3].price; 
+			printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+					
+    		case 5 :printf("You selected %s (%d baht)",ds[4].name,ds[4].price); totaldrinks = ds[4].price; 
+					printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+					
+    		case 6 :printf("You selected %s (%d baht)",ds[5].name,ds[5].price); totaldrinks = ds[5].price; 
+					printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+					
+    		case 7 :printf("You selected %s (%d baht)",ds[6].name,ds[6].price); totaldrinks = ds[6].price; 
+					printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+					
+    		case 8 :printf("You selected %s (%d baht)",ds[7].name,ds[7].price); totaldrinks = ds[7].price; 
+					printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+					
+    		case 9 :printf("You selected %s (%d baht)",ds[8].name,ds[8].price); totaldrinks = ds[8].price; 
+					printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+					
+    		case 10 :printf("You selected %s (%d baht)",ds[9].name,ds[9].price); totaldrinks = ds[9].price; 
+					printf("\n[Please select size]");
+					printf("\n[1] S  20Baht");
+					printf("\n[2] M  30Baht");
+					printf("\n[3] L  35Baht");
+					printf("\nselect size :");
+					scanf("%d",&ac);
+					if(ac==1){
+						result = totaldrinks + 20;
+					}else if(ac==2){
+						result = totaldrinks + 30;
+					}else if(ac==3){
+						result = totaldrinks + 35;
+					}
+					printf("Total = %d",result);
+					sum+=result;
+					break;
+					
     		case 0 : break;
-    		default : printf("Invalid selection, please try again...");
+    		default : printf("\nInvalid selection, please try again..."); break;
+    		
 		}
-		printf("\nPlease Select your option (Press 0 for exit): ");
+		printf("\nPlease Select your ch option (Press 0 for exit): ");
     	scanf("%d",&drinksChoice);
-	}while(drinksChoice!=0);
-	
-	
-	int sizeC=total,result;
-	printf("\n[Please select size]");
-	printf("\n[1] S  20Baht");
-	printf("\n[2] M  30Baht");
-	printf("\n[3] L  35Baht");
-	printf("\nselect size :");
-	scanf("%d",&ac);
-	
-	if(ac==1){
-		result=sizeC+20;
-	}else if(ac==2){
-		result=sizeC+30;
-	}else{
-		result=sizeC+35;	
-	}
-	
-	printf("Total = %d",result);
-	
-	return total;
+    	}while(drinksChoice!=0);
+    	total=sum;
+        printf("Totaldrink = %d",sum);
+		return sum;
 }
 
 int payment(){
