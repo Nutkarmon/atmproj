@@ -133,7 +133,7 @@ int food(){
 
 //drink section
 int drinks(){
-	int drinksChoice;
+	int drinksChoice,ac;
 	struct drinks_stock ds[size] = {{15,"Cola"}, {20,"Oishi"},{45,"Apple"},{30,"Orenge"},{45,"Soda"},{65,"perrier Water"},{35,"Peach Soda"},{55,"Kiwi"},{55,"Strawberry"},{55,"Sprite"}};
 	
 	printf("DRINKS SECTION\n-------------------------------\n");
@@ -163,6 +163,25 @@ int drinks(){
 		printf("\nPlease Select your option (Press 0 for exit): ");
     	scanf("%d",&drinksChoice);
 	}while(drinksChoice!=0);
+	
+	
+	int sizeC=total,result;
+	printf("\n[Please select size]");
+	printf("\n[1] S  20Baht");
+	printf("\n[2] M  30Baht");
+	printf("\n[3] L  35Baht");
+	printf("\nselect size :");
+	scanf("%d",&ac);
+	
+	if(ac==1){
+		result=sizeC+20;
+	}else if(ac==2){
+		result=sizeC+30;
+	}else{
+		result=sizeC+35;	
+	}
+	
+	printf("Total = %d",result);
 	
 	return total;
 }
