@@ -24,7 +24,7 @@ struct drinks_stock{
 };
 
 //Declaring global variables
-int total=0, amount=0, m_in=0, i=0, foodCount=0;
+int total=0, amount=0, m_in=0, i=0;
 
 int main(){
     int choice;
@@ -111,16 +111,16 @@ int food(){
     
     do{
     	switch(foodChoice){
-    		case 1 : printf("You selected %s (%d baht)",fst[0].name,fst[0].price); total += fst[0].price; foodCount+=1; break;
-    		case 2 : printf("You selected %s (%d baht)",fst[1].name,fst[1].price); total += fst[1].price; foodCount+=1; break;
-            case 3 : printf("You selected %s (%d baht)",fst[2].name,fst[2].price); total += fst[2].price; foodCount+=1; break; 
-    		case 4 : printf("You selected %s (%d baht)",fst[3].name,fst[3].price); total += fst[3].price; foodCount+=1; break; 
-            case 5 : printf("You selected %s (%d baht)",fst[4].name,fst[4].price); total += fst[4].price; foodCount+=1; break; 
-    		case 6 : printf("You selected %s (%d baht)",fst[5].name,fst[5].price); total += fst[5].price; foodCount+=1; break; 
-            case 7 : printf("You selected %s (%d baht)",fst[6].name,fst[6].price); total += fst[6].price; foodCount+=1; break; 
-    		case 8 : printf("You selected %s (%d baht)",fst[7].name,fst[7].price); total += fst[7].price; foodCount+=1; break; 
-            case 9 : printf("You selected %s (%d baht)",fst[8].name,fst[8].price); total += fst[8].price; foodCount+=1; break; 
-    		case 10 : printf("You selected %s (%d baht)",fst[9].name,fst[9].price); total += fst[9].price; foodCount+=1; break;
+    		case 1 : printf("You selected %s (%d baht)",fst[0].name,fst[0].price); total += fst[0].price; break;
+    		case 2 : printf("You selected %s (%d baht)",fst[1].name,fst[1].price); total += fst[1].price; break;
+            case 3 : printf("You selected %s (%d baht)",fst[2].name,fst[2].price); total += fst[2].price; break; 
+    		case 4 : printf("You selected %s (%d baht)",fst[3].name,fst[3].price); total += fst[3].price; break; 
+            case 5 : printf("You selected %s (%d baht)",fst[4].name,fst[4].price); total += fst[4].price; break; 
+    		case 6 : printf("You selected %s (%d baht)",fst[5].name,fst[5].price); total += fst[5].price; break; 
+            case 7 : printf("You selected %s (%d baht)",fst[6].name,fst[6].price); total += fst[6].price; break; 
+    		case 8 : printf("You selected %s (%d baht)",fst[7].name,fst[7].price); total += fst[7].price; break; 
+            case 9 : printf("You selected %s (%d baht)",fst[8].name,fst[8].price); total += fst[8].price; break; 
+    		case 10 : printf("You selected %s (%d baht)",fst[9].name,fst[9].price); total += fst[9].price; break;
             case 0 : break;
             default : printf("Invalid selection, please try again...");
 		}
@@ -128,7 +128,6 @@ int food(){
     	scanf("%d",&foodChoice);
 	}while(foodChoice!=0);
 	return total;
-    return foodCount;
 }
 
 //drink section
@@ -187,22 +186,8 @@ int drinks(){
 }
 
 int payment(){
-	int pay=0, payMethod, countFood, chF;
+	int pay=0, payMethod;
     pay = total;
-    countFood = foodCount;
-    if(countFood>0){
-        do{
-            printf("You have %d food(s) that can warm. Do you want to warm food(s)?\nPress 1 : Yes\nPress 2 : No\nSelect Option [1/2] : ",foodCount);
-            scanf("%d",&chF);
-            if(chF==1){
-                printf("You selected to warm foods.\n");
-            }else if(chF==2){
-                printf("You selected to not warm foods.\n");
-            }else{
-                printf("Invalid decision, please try again...\n");
-            }
-        }while(chF!=1&&chF!=2);
-    }
 
     printf("Total = %d\n",pay);
 	
@@ -218,6 +203,27 @@ int payment(){
 	    printf("\n\t2.qr promptpay");
         printf("\nPlease Select your option (Press 0 for exit): ");
         scanf("%d",&payMethod);
+		if(payMethod==1){
+        	printf("input money : ");
+        	scanf("%d",&m_in);
+        	printf("Money = %d\n",m_in);
+        }
+        
+		if(payMethod==2){
+			printf(" ||.|||.||||.|||||.||||.|||.||\n");
+			printf("input money : ");
+        	scanf("%d",&m_in);
+		    printf("Money = %d\n",m_in);
+		}
+
 	}while(payMethod!=0);
+	
+	printf("Money = %d\n",m_in);
+	if(m_in>total){
+			printf("you jay ken");
+		}else{
+			printf("input money agin");
+		}
+		printf("jay tang sum red");
 	return total;
 }
