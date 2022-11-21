@@ -133,7 +133,7 @@ int food(){
 
 //drink section
 int drinks(){
-	int drinksChoice,ac;
+	int drinksChoice,ac,result=0;
 	struct drinks_stock ds[size] = {{15,"Cola"}, {20,"Oishi"},{45,"Apple"},{30,"Orenge"},{45,"Soda"},{65,"perrier Water"},{35,"Peach Soda"},{55,"Kiwi"},{55,"Strawberry"},{55,"Sprite"}};
 	
 	printf("DRINKS SECTION\n-------------------------------\n");
@@ -147,16 +147,16 @@ int drinks(){
     
     do{
     	switch(drinksChoice){
-    		case 1 :printf("You selected %s (%d baht)",ds[0].name,ds[0].price); total += ds[0].price; break;
-    		case 2 :printf("You selected %s (%d baht)",ds[1].name,ds[1].price); total += ds[1].price; break;
-    		case 3 :printf("You selected %s (%d baht)",ds[2].name,ds[2].price); total += ds[2].price; break;
-    		case 4 :printf("You selected %s (%d baht)",ds[3].name,ds[3].price); total += ds[3].price; break;
-    		case 5 :printf("You selected %s (%d baht)",ds[4].name,ds[4].price); total += ds[4].price; break;
-    		case 6 :printf("You selected %s (%d baht)",ds[5].name,ds[5].price); total += ds[5].price; break;
-    		case 7 :printf("You selected %s (%d baht)",ds[6].name,ds[6].price); total += ds[6].price; break;
-    		case 8 :printf("You selected %s (%d baht)",ds[7].name,ds[7].price); total += ds[7].price; break;
-    		case 9 :printf("You selected %s (%d baht)",ds[8].name,ds[8].price); total += ds[8].price; break;
-    		case 10 :printf("You selected %s (%d baht)",ds[9].name,ds[9].price); total += ds[9].price; break;
+    		case 1 :printf("You selected %s (%d baht)",ds[0].name,ds[0].price); result += ds[0].price;break;
+    		case 2 :printf("You selected %s (%d baht)",ds[1].name,ds[1].price); result += ds[1].price;break;
+    		case 3 :printf("You selected %s (%d baht)",ds[2].name,ds[2].price); result += ds[2].price;break;
+    		case 4 :printf("You selected %s (%d baht)",ds[3].name,ds[3].price); result += ds[3].price;break;
+    		case 5 :printf("You selected %s (%d baht)",ds[4].name,ds[4].price); result += ds[4].price;break;
+    		case 6 :printf("You selected %s (%d baht)",ds[5].name,ds[5].price); result += ds[5].price;break;
+    		case 7 :printf("You selected %s (%d baht)",ds[6].name,ds[6].price); result += ds[6].price;break;
+    		case 8 :printf("You selected %s (%d baht)",ds[7].name,ds[7].price); result += ds[7].price;break;
+    		case 9 :printf("You selected %s (%d baht)",ds[8].name,ds[8].price); result += ds[8].price;break;
+    		case 10 :printf("You selected %s (%d baht)",ds[9].name,ds[9].price); result += ds[9].price;break;
     		case 0 : break;
     		default : printf("Invalid selection, please try again...");
 		}
@@ -165,31 +165,33 @@ int drinks(){
 	}while(drinksChoice!=0);
 	
 	
-	int sizeC=total,result;
+	int sizeC=result;
 	printf("\n[Please select size]");
 	printf("\n[1] S  20Baht");
 	printf("\n[2] M  30Baht");
 	printf("\n[3] L  35Baht");
 	printf("\nselect size :");
-	scanf("%d",&ac);
 	
+	scanf("%d",&ac);
 	if(ac==1){
-		result=sizeC+20;
+		total=sizeC+20;
 	}else if(ac==2){
-		result=sizeC+30;
+		total=sizeC+30;
 	}else{
-		result=sizeC+35;	
+		total=sizeC+35;	
 	}
 	
-	printf("Total = %d",result);
+	printf("Total = %d",total);
 	
 	return total;
 }
 
 int payment(){
-	int pay=0, payMethod, cF, cH;
+	int pay=0, payMethod, cF, cH,ac;
     pay = total;
 	cF = foodCount;
+		
+	
 	if(cF>0){
 		do{
 			printf("You have %d food(s) to warm. Do you want to warm food(s)?\n1 - Yes\n2 - No");
@@ -202,9 +204,9 @@ int payment(){
 				printf("Invalid selection, please try again...");
 			}
 		}while(cH!=1&&cH!=2);
+	   printf("\nTotal = %d\n",pay);	
 	}
-
-    printf("Total = %d\n",pay);
+	
 	
 	do{
 		switch(payMethod){
