@@ -24,7 +24,7 @@ struct drinks_stock{
 };
 
 //Declaring global variables
-int total=0, amount=0, m_in=0, i=0;
+int total=0, amount=0, i=0;
 
 int main(){
     int choice;
@@ -75,7 +75,7 @@ int snacks(){
     do{
     	switch(opt){
             case 1: printf("You selected %s (%d baht)",st[0].name,st[0].price); total += st[0].price; break;
-            case 2: printf("You selected %s (%d baht)",st[1].name,st[1].price); total += st[1].price;  break;
+            case 2: printf("You selected %s (%d baht)",st[1].name,st[1].price); total += st[1].price; break;
             case 3: printf("You selected %s (%d baht)",st[2].name,st[2].price); total += st[2].price; break;
             case 4: printf("You selected %s (%d baht)",st[3].name,st[3].price); total += st[3].price; break;
             case 5: printf("You selected %s (%d baht)",st[4].name,st[4].price); total += st[4].price; break;
@@ -186,44 +186,40 @@ int drinks(){
 }
 
 int payment(){
-	int pay=0, payMethod;
+	int pay=0, payMethod, *m_in=0, ppin=0, change=0;
     pay = total;
 
-    printf("Total = %d\n",pay);
-	
+    printf(" Total = %d\n",pay);
 	do{
-		switch(payMethod){
-			case 1 :printf("cash"); break;
-			case 2 :printf("qr promptpay"); break;
-            case 0 : break;
-            default : printf("Invalid Payment Method!"); break;
-		}
 		printf("\nPlease Select your payment");
 	    printf("\n\t1.cash");
 	    printf("\n\t2.qr promptpay");
         printf("\nPlease Select your option (Press 0 for exit): ");
         scanf("%d",&payMethod);
-		if(payMethod==1){
-        	printf("input money : ");
-        	scanf("%d",&m_in);
-        	printf("Money = %d\n",m_in);
-        }
-        
+    	}while(payMethod!=0&&payMethod!=1&&payMethod!=2);
+    	
+    	if(payMethod==1){
+        	do{
+				printf("input money : ");
+        		scanf("%d",&m_in);
+        		if(m_in>total){
+					printf("you jay ken\n");
+					change = &m_in-pay;
+					printf("%d - %d = %d"),&m_in,&pay,change;
+					printf("\nPayment Successful!");
+				}else if(m_in<total){
+					printf("insufficient money, input money again");
+				}else{
+					printf("Payment Successful!");
+				}
+			}while((&m_in!=pay)&&(&m_in<pay));
+    	}
 		if(payMethod==2){
 			printf(" ||.|||.||||.|||||.||||.|||.||\n");
+			printf(" Jum nun tang tee tong jay = %d\n",pay);
 			printf("input money : ");
-        	scanf("%d",&m_in);
-		    printf("Money = %d\n",m_in);
+        	scanf("%d",&ppin);
+			printf(" Thank you ('_')");
 		}
-
-	}while(payMethod!=0);
-	
-	printf("Money = %d\n",m_in);
-	if(m_in>total){
-			printf("you jay ken");
-		}else{
-			printf("input money agin");
-		}
-		printf("jay tang sum red");
 	return total;
 }
