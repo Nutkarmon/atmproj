@@ -57,7 +57,7 @@ int menu(){
     printf("\n\t\t\t|                0.exit               |");
     printf("\n\t\t\t|_____________________________________|");
     printf("\n\n Please Select Menu [0-4]:");
-    scanf("%d",&ch);s
+    scanf("%d",&ch);
     return ch; 
 }
 
